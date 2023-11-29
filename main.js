@@ -22,6 +22,8 @@ AOS.init({
 const nav = document.querySelector("nav");
 const openMenu = document.querySelector(".openMenu");
 const closeMenu = document.querySelector(".closeMenu");
+const cards = document.querySelectorAll(".card");
+const closeBtns = document.querySelectorAll(".modal-close");
 
 openMenu.addEventListener("click", (e) => {
   e.preventDefault();
@@ -32,4 +34,22 @@ openMenu.addEventListener("click", (e) => {
 closeMenu.addEventListener("click", (e) => {
   e.preventDefault();
   nav.style.top = "-200%";
+});
+
+// console.log(card);
+console.log(213);
+
+cards.forEach(function (btn) {
+  console.log(btn);
+  btn.onclick = function () {
+    let modal = btn.getAttribute("data-modal");
+    console.log(modal);
+    document.getElementById(modal).style.display = "block";
+  };
+});
+
+closeBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    btn.closest(".modal").style.display = "none";
+  };
 });
