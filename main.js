@@ -24,6 +24,7 @@ const openMenu = document.querySelector(".openMenu");
 const closeMenu = document.querySelector(".closeMenu");
 const cards = document.querySelectorAll(".card");
 const closeBtns = document.querySelectorAll(".modal-close");
+const submitBtn = document.querySelector(".submitBtn");
 
 openMenu.addEventListener("click", (e) => {
   e.preventDefault();
@@ -52,4 +53,26 @@ closeBtns.forEach(function (btn) {
   btn.onclick = function () {
     btn.closest(".modal").style.display = "none";
   };
+});
+
+submitBtn.addEventListener("click", (e) => {
+  const nameForm = document.getElementById("name").value;
+  const emailForm = document.getElementById("email").value;
+  const textForm = document.getElementById("message").value;
+  const body =
+    "Name: " +
+    nameForm +
+    "<br/> Email: " +
+    emailForm +
+    "<br/> Message: " +
+    textForm;
+
+  e.preventDefault();
+  Email.send({
+    SecureToken: "56101168-c68b-49db-8813-944423ea7d69",
+    To: "siriusdatasolutions@gmail.com",
+    From: "siriusdatasolutions@gmail.com",
+    Subject: "Contact Message From Website",
+    Body: body,
+  }).then((message) => alert(message));
 });
