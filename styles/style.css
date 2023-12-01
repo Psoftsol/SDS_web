@@ -155,6 +155,7 @@ a{
 .collection_container {
     height: 80vh;
     width: 90%;
+    margin-top: 30px !important;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -415,7 +416,7 @@ a{
 /* Footer */
 #footer{
     background-color: var(--cardBackground);
-    height: 10vh;
+    height: 15vh;
 }
 
 .footer_container{
