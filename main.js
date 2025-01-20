@@ -70,8 +70,8 @@ submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   Email.send({
     SecureToken: "56101168-c68b-49db-8813-944423ea7d69",
-    To: "siriusdatasolutions@gmail.com",
-    From: "siriusdatasolutions@gmail.com",
+    To: "stevet@siriusdatasolutions.com",
+    From: "stevet@siriusdatasolutions.com",
     Subject: "Contact Message From Website",
     Body: body,
   }).then((message) => alert(message));
